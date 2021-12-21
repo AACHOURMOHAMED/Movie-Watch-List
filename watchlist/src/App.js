@@ -7,9 +7,12 @@ import { Watched } from './components/Watched';
 import { Add } from './components/Add';
 import "./lib/fontawesome-free-5.15.4-web/css/all.min.css";
 
+import {GlobalProvider} from './context/GlobalState';
+
 function App() {
   return (
-    <Router>
+    <GlobalProvider>
+      <Router>
       <Header/>
 
       <Switch>
@@ -26,6 +29,8 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </GlobalProvider>
+    
     
   );
 }
