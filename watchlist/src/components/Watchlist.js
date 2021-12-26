@@ -11,11 +11,16 @@ export const Watchlist = () => {
                   <h1 className='heading'>My watchlist</h1>
               </div>
 
-              <div className='movie-grid'>
-                  {watchlist.map(movie => (
+                {watchlist.length > 0 ? (
+                    <div className='movie-grid'>
+                        {watchlist.map(movie => (
                       <MovieCard movie={movie} type="watchlist"/>
-                  ))}
-              </div>
+                        ))}
+                    </div>
+                ) : (
+                    <h2 className='no-movies'>No movies in your watch list</h2>
+                )}
+              
           </div>
       </div>
     )
